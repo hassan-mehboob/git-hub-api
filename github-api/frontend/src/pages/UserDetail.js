@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom"
 import Repositories from "../components/Repositories"
 import { detailUser } from "../actions/userActions"
 import { repoUser } from "../actions/userRepoAction"
+import Loader from "../components/Loader"
 const UserDetail = () => {
   const params = useParams()
   const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const UserDetail = () => {
       <Navbar />
       {/* image and userName, desc, github, social link in section 1 */}
       {loading ? (
-        <h2 className='bg-red-500'>Loading....</h2>
+        <Loader />
       ) : error ? (
         <h3>{error}</h3>
       ) : (
